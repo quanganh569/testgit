@@ -21,6 +21,7 @@
     <tr *ngFor="let item of lstLike | filter:searchText | paginate:{itemsPerPage:10,currentPage:p};  index as i">
       <th scope="row">{{i + 1 + (p-1)*10}}</th>
       <td>{{item.nameCamp}}</td>
+      <td>{{item.linkChiendich}}</td>
       <td>{{item.currentLike}}</td>
       <td>{{item.beginLike}}</td>
       <td>{{item.targetLike}}</td>
