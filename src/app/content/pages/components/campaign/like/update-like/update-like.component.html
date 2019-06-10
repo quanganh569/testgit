@@ -1,0 +1,18 @@
+
+<div class="container">
+  <div class="row">
+    <h1 class="text-center " style=margin-top:20px;>CẬP NHẬT</h1>
+    <div class="col-md-12">
+      <label>Tên chiến dịch</label>
+      <input type="text" class="form-control form-control-sm" [(ngModel)]="nameCamp" name="nameCamp">
+    </div>  <br>
+    <div class="col-md-12">
+      <label>Link chiến dịch</label><input data-placement="top" title="Xin lỗi không thể sửa đường link chiến dịch" value="44" type="text" class="form-control form-control-sm" [(ngModel)]="linkChiendich" name="linkChiendich" [disabled]=true>
+    </div>  <br>
+    <div class="col-md-12">
+      <label>Tổng like</label><input type="text" class="form-control form-control-sm "  [(ngModel)]="currentLike" name="currentLike">
+    </div>
+  </div>
+  <br>
+    <button type="button" class="btn btn-danger" (click)="updateLike()">Cập nhật chiến dịch Share</button>
+  </div>

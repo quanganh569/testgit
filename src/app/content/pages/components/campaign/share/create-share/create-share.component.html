@@ -1,0 +1,42 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+            <label >Tên chiến dịch</label>
+            <input type="text" class="form-control" name="nameCamp" [(ngModel)]="nameCamp" [ngModelOptions]="{standalone: true}" required>
+          </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="sel1">Giới tính</label>
+        <select class="form-control" id="sel1" [(ngModel)]="sex" [ngModelOptions]="{standalone: true}" required>
+          <option value="true">Nam</option>
+          <option value="false">Nữ</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+      
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="sel1">Độ tuổi</label>
+          <select class="form-control" id="sel1" [(ngModel)]="age" [ngModelOptions]="{standalone: true}" required>
+            <option value="true">Từ 18 đến 20 tuổi </option>
+            <option value="false">Trên 20 tuổi</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+          <div class="form-group">
+              <label >Tổng share:</label>
+              <input type="text" class="form-control" [(ngModel)]="currentShare" [ngModelOptions]="{standalone: true}">
+            </div>
+      </div>
+    </div>
+    <button type="button" class="btn btn-primary" (click)="createShare()">Khởi tạo</button>
+</div>
+

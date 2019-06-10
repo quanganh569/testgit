@@ -1,0 +1,36 @@
+<h1 style="margin-top:2em;">DANH SÁCH LIKE</h1>
+<div class="form-group">
+  <label>Tìm kiếm</label>
+  <input type="text" [(ngModel)]="searchText" class="form-control" placeholder="Mời bạn nhập vào ô tìm kiếm">
+</div>
+<table class="table table-hover table-responsive-xs table-info">
+  <thead class="thead-dark ">
+    <tr>
+      <th scope="col">STT</th>
+      <th scope="col">Tên chiến dịch</th>
+      <th scope="col">Link chiến dịch</th>
+      <th scope="col">Tổng like</th>
+      <th scope="col">Số like ban đầu</th>
+      <th scope="col">Số like mục tiêu</th>
+      <th scope="col">Trạng thái</th>
+      <th scope="col">Ngày tạo</th>
+      <th scope="col">Thao tác</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of lstLike | filter:searchText | paginate:{itemsPerPage:10,currentPage:p};  index as i">
+      <th scope="row">{{i + 1 + (p-1)*10}}</th>
+      <td>{{item.nameCamp}}</td>
+      <td>{{item.currentLike}}</td>
+      <td>{{item.beginLike}}</td>
+      <td>{{item.targetLike}}</td>
+      <td>{{item.status ? 'Đang mở':'Đã đóng' }}</td>
+      <td>{{item.createDate|date:"dd/MM/yyyy"}}</td>
+      <td>
+        <button type="button" class="btn btn-warning" (click)="onDetail(item?.id)" ><i class="far fa-edit"></i></button>
+      </td>
+    </tr>
+  </tbody>
+</table >
+<pagination-controls (pageChange)="p=$event"></pagination-controls>
+<router-outlet></router-outlet>

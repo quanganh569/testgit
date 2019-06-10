@@ -1,0 +1,17 @@
+
+<div class="container">
+  <div class="row">
+    <h1 class="text-center">THÊM MỚI</h1>
+    <div class="col-md-12">
+      <label>Tên chiến dịch</label><input type="text" class="form-control form-control-sm" [(ngModel)]="nameCamp">
+    </div><br/>
+    <div class="col-md-12">
+      <label>Link chiến dịch</label><input type="text" class="form-control form-control-sm " [(ngModel)]="linkChiendich">
+    </div><br/>
+    <div class="col-md-12">
+      <label>Tổng like</label><input type="text" class="form-control form-control-sm " [(ngModel)]="currentLike">
+    </div><br/>
+  </div>
+  <br/>
+    <button type="submit" class="btn btn-success" (click)="createLike()" >Tạo mới</button>
+  

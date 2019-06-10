@@ -1,0 +1,38 @@
+<h1 style="margin-top:2em;">DANH SÁCH SHARE</h1>
+<div class="form-group">
+  <label>Tìm kiếm</label>
+  <input type="text" [(ngModel)]="searchText" class="form-control" placeholder="Mời bạn nhập vào ô tìm kiếm">
+</div>
+<table class="table table-hover table-responsive-xs table-info">
+  <thead class="thead-dark ">
+      <tr>
+        <th scope="col">STT</th>
+        <th scope="col">Tên chiến dịch</th>
+        <th scope="col">Số share hiện tại</th>
+        <th scope="col">Số share ban đầu</th>
+        <th scope="col">Số share mục tiêu</th>
+        <th scope="col">Ngày tạo</th>
+        <th scope="col">Trạng thái</th>
+        <!-- <th scope="col">Giới tính</th>
+        <th scope="col">Độ tuổi</th> -->
+        <th scope="col">Thao tác</th>
+      </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of lstShare |filter:searchText|paginate:{itemsPerPage:10,currentPage:p}; let i = index">
+      <th scope="row">{{i+1 + (p-1)*10}}</th>
+      <td>{{item.nameCamp}}</td>
+      <td>{{item.currentShare}}</td>
+      <td>{{item.beginShare}}</td>
+      <td>{{item.targetShare}}</td>
+      <td>{{item.createDate|date:"dd/MM/yyyy"}}</td>
+      <td>{{item.status}}</td>
+      <!-- <td>{{item.sex?"Nam":"Nữ"}}</td>
+      <td>{{item.age?"Từ 18 đến 20 tuổi":"Từ 20 tuổi trở lên"}}</td> -->
+      <td>
+        <button type="button" class="btn btn-warning" (click)="onDetail(item?.id)" ><i class="far fa-edit"></i></button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<pagination-controls (pageChange)="p=$event"></pagination-controls>

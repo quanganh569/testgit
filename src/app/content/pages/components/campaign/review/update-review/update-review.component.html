@@ -1,0 +1,20 @@
+
+<div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <label>Tên chiến dịch</label>
+        <input type="text" class="form-control form-control-sm" [(ngModel)]="nameCamp" name="nameCamp">
+      </div>
+    </div>
+  
+      <div class="row">
+        <div class="col-md-12">
+          <label>Tổng lượng review</label><input type="text" class="form-control form-control-sm "  [(ngModel)]="currentReview" name="currentReview">
+        </div>
+        <label for="exampleTextarea">Nội dung bình luận</label>
+    <textarea class="form-control" id="exampleTextarea" rows="5" [(ngModel)]="content"  [ngModelOptions]="{standalone: true}"></textarea>
+   
+      </div>
+      <button type="button" class="btn btn-danger" (click)="updateReview()">Cập nhật</button>
+    </div>
+  

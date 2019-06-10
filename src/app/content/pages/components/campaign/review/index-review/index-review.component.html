@@ -1,0 +1,39 @@
+<section class="index-review">
+<h1 style="margin-top:2em;">DANH SÁCH REVIEW</h1>
+<div class="form-group">
+  <label>Tìm kiếm</label>
+  <input type="text" [(ngModel)]="searchText" class="form-control" placeholder="Mời bạn nhập vào ô tìm kiếm">
+</div>
+<table class="table table-hover table-responsive-xs table-info">
+  <thead class="thead-dark ">
+    <tr>
+      <th scope="col">STT</th>
+      
+      <th scope="col">Tên chiến dịch</th>
+      <th scope="col">Số review hiện tại</th>
+      <th scope="col">Số review ban đầu</th>
+      <th scope="col">Số review mục tiêu</th>
+      <th scope="col">Ngày tạo</th>
+      <th scope="col">Trạng thái</th>
+      <th scope="col">Thao tác</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of lstReview|filter:searchText|paginate :{itemsPerPage:10,currentPage:p}; let i = index">
+      <th scope="row">{{i +1 + (p-1)*10}}</th>
+      
+      <td>{{item.nameCamp}}</td>
+      <td>{{item.currentReview}}</td>
+      <td>{{item.beginReview}}</td>
+      <td>{{item.targetReview}}</td>
+      <td>{{item.createDate|date:"dd/MM/yyyy"}}</td>
+      <td>{{item.status}}</td>
+      <td>
+        <button type="button" class="btn btn-warning" (click)="onDetail(item?.id)" ><i class="far fa-edit"></i></button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<pagination-controls (pageChange)="p=$event"></pagination-controls>
+
+</section>
