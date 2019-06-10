@@ -8,6 +8,7 @@
       <tr>
         <th scope="col">STT</th>
         <th scope="col">Tên chiến dịch</th>
+        <th scope="col">Link chiến dịch</th>
         <th scope="col">Số share hiện tại</th>
         <th scope="col">Số share ban đầu</th>
         <th scope="col">Số share mục tiêu</th>
@@ -22,6 +23,7 @@
     <tr *ngFor="let item of lstShare |filter:searchText|paginate:{itemsPerPage:10,currentPage:p}; let i = index">
       <th scope="row">{{i+1 + (p-1)*10}}</th>
       <td>{{item.nameCamp}}</td>
+      <td>{{item.linkChiendich}}</td>
       <td>{{item.currentShare}}</td>
       <td>{{item.beginShare}}</td>
       <td>{{item.targetShare}}</td>

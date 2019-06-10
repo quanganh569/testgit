@@ -3,6 +3,7 @@ export class reviewIndex {
     id: number;
     createDate: Date;
     nameCamp: string;
+    linkChiendich:URL;
     currentReview: number;
     beginReview: number;
     targetReview: number;

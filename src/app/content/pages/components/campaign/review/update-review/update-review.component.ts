@@ -12,6 +12,7 @@ export class UpdateReviewComponent implements OnInit {
   nameCamp:string;
   currentReview:number;
   content:string;
+  linkChiendich:URL;
 
   constructor(private _acRouter:ActivatedRoute,private _data:DataService,private _router:Router) { 
     this.idShare=this._acRouter.snapshot.params["id"]
@@ -23,6 +24,7 @@ export class UpdateReviewComponent implements OnInit {
         this.nameCamp=data.nameCamp;
         this.currentReview=data.currentReview;
         this.content=data.content;
+        this.linkChiendich=data.linkChiendich
       },error=>{
         console.log(error);
       }
@@ -34,8 +36,9 @@ export class UpdateReviewComponent implements OnInit {
   updateReview(){
     const data={
       "nameCamp":this.nameCamp,
-      "currentShare":this.currentReview,
-      "content":this.content
+      "currentReview":this.currentReview,
+      "content":this.content,
+      "linkChiendich":this.linkChiendich
     }
     this._data.updateReview(this.idShare,data).subscribe(data=>{
       console.log(data);

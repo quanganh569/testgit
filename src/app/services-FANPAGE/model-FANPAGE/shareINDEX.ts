@@ -10,4 +10,5 @@ export class shareIndex {
     campType: number;
     sex:boolean;
     age:boolean;
+    linkChiendich:URL
 }

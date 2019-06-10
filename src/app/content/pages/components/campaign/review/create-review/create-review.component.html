@@ -1,19 +1,27 @@
 <div class="container">
-<form class="create">
+  <form class="create">
+    <h1>THÊM MỚI</h1>
     <div class="row">
       <div class="col">
-        <label>Link chiến dịch</label>
-        <input type="text" class="form-control" placeholder="Nhập link chiến dịch" [(ngModel)]="nameCamp"  [ngModelOptions]="{standalone: true}">
+        <label>Tên chiến dịch</label>
+        <input type="text" class="form-control" placeholder="Nhập link chiến dịch" [(ngModel)]="nameCamp"
+          [ngModelOptions]="{standalone: true}">
       </div>
       <div class="col">
-          <label>Tổng số lượt bình luận</label>
-        <input type="text" class="form-control" placeholder="Tổng số lượt bình luận" [(ngModel)]="currentShare"  [ngModelOptions]="{standalone: true}">
+        <label>Link chiến dịch</label>
+        <input type="text" class="form-control" placeholder="Nhập link chiến dịch" [(ngModel)]="linkChiendich"
+          [ngModelOptions]="{standalone: true}">
       </div>
-      
+      <div class="col">
+        <label>Tổng số lượt bình luận</label>
+        <input type="text" class="form-control" placeholder="Tổng số lượt bình luận" [(ngModel)]="currentShare"
+          [ngModelOptions]="{standalone: true}">
+      </div>
     </div>
-    
-     <label for="exampleTextarea">Nội dung bình luận</label>
-    <textarea class="form-control" id="exampleTextarea" rows="5" [(ngModel)]="content"  [ngModelOptions]="{standalone: true}"></textarea>
-    </form>
-    <button type="button" class="btn btn-primary " (click)="createReview()">Khởi tạo</button>
-  </div>
+    <br>
+    <label for="exampleTextarea">Nội dung bình luận</label>
+    <textarea class="form-control" id="exampleTextarea" rows="5" [(ngModel)]="content"
+      [ngModelOptions]="{standalone: true}"></textarea>
+  </form><br>
+  <button type="button" class="btn btn-success " (click)="createReview()">Khởi tạo</button>
+</div>

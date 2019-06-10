@@ -13,6 +13,7 @@ export class UpdateShareComponent implements OnInit {
   currentShare:number;
   sex:boolean;
   age:boolean;
+  linkChiendich:URL;
 
   constructor(private _acRouter:ActivatedRoute,private _data:DataService,private _router:Router) {
     this.idShare=this._acRouter.snapshot.params["id"]
@@ -25,6 +26,7 @@ export class UpdateShareComponent implements OnInit {
         this.currentShare=data.currentShare;
         this.sex=data.sex;
         this.age=data.age;
+        this.linkChiendich=data.linkChiendich;
       },error=>{
         console.log(error);     
       }
@@ -37,9 +39,10 @@ export class UpdateShareComponent implements OnInit {
   updateShare(){
     const data = {
       "nameCamp":this.nameCamp,
-      "currentLike":this.currentShare,
+      "currentShare":this.currentShare,
       "sex":this.sex,
       "age":this.age,
+      "linkChiendich":this.linkChiendich,
     }
     this._data.updateShare(this.idShare,data).subscribe(data=>{
       console.log(data);

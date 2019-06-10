@@ -13,6 +13,7 @@ export class CreateReviewComponent implements OnInit {
   public nameCamp:string;
   public currentShare:string;
   public content:string;
+  public linkChiendich:URL;
   constructor(private _data:DataService,private _router:Router) { }
 
   ngOnInit() {
@@ -21,7 +22,8 @@ export class CreateReviewComponent implements OnInit {
     const data = {
       "nameCamp":this.nameCamp,
       "currentLike":this.currentShare,
-      "content":this.content
+      "content":this.content,
+      "linkChiendich":this.linkChiendich
     }
     this._data.createReview(data)
     .subscribe(data=>{

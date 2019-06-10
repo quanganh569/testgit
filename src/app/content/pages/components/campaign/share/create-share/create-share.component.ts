@@ -14,7 +14,7 @@ export class CreateShareComponent implements OnInit {
   public currentShare:any;
   public sex:boolean;
   public age:boolean;
-
+  public linkChiendich:URL
   constructor(private _router:Router,private data:DataService) { }
 
   ngOnInit() {
@@ -25,7 +25,8 @@ export class CreateShareComponent implements OnInit {
       "nameCamp":this.nameCamp,
       "currentShare":this.currentShare,
       "sex":this.sex,
-      "age":this.age
+      "age":this.age,
+      "linkChiendich":this.linkChiendich
     }
     this.data.createShare(data)
     .subscribe(data=>{

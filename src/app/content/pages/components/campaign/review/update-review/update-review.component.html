@@ -1,20 +1,24 @@
-
 <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <label>Tên chiến dịch</label>
-        <input type="text" class="form-control form-control-sm" [(ngModel)]="nameCamp" name="nameCamp">
-      </div>
+<h1>CẬP NHẬT</h1>
+  <div class="row">
+    <div class="col-md-4">
+      <label>Tên chiến dịch</label>
+      <input type="text" class="form-control form-control-sm" [(ngModel)]="nameCamp" name="nameCamp">
     </div>
-  
-      <div class="row">
-        <div class="col-md-12">
-          <label>Tổng lượng review</label><input type="text" class="form-control form-control-sm "  [(ngModel)]="currentReview" name="currentReview">
-        </div>
-        <label for="exampleTextarea">Nội dung bình luận</label>
-    <textarea class="form-control" id="exampleTextarea" rows="5" [(ngModel)]="content"  [ngModelOptions]="{standalone: true}"></textarea>
-   
-      </div>
-      <button type="button" class="btn btn-danger" (click)="updateReview()">Cập nhật</button>
+    <div class="col-md-4">
+      <label>Link chiến dịch</label>
+      <input data-placement="top" title="Xin lỗi không thể sửa đường link chiến dịch" value="44" disabled="true"  type="text" class="form-control form-control-sm" [(ngModel)]="linkChiendich"
+        name="linkChiendich">
     </div>
-  
+    <div class="col-md-4">
+      <label>Tổng lượng bình luận</label><input data-placement="top" title="Xin lỗi không thể sửa tổng số bình luận" value="44" disabled="true"  type="text" class="form-control form-control-sm "
+        [(ngModel)]="currentReview" name="currentReview">
+    </div>
+  </div>
+  <br>
+  <label for="exampleTextarea">Nội dung bình luận</label>
+    <textarea class="form-control" id="exampleTextarea" rows="5" [(ngModel)]="content"
+      [ngModelOptions]="{standalone: true}"></textarea>
+<br>
+  <button type="button" class="btn btn-danger" (click)="updateReview()">Cập nhật</button>
+</div>
